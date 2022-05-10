@@ -1,4 +1,4 @@
-package sg.edu.np.mad.week2madprac;
+package sg.edu.np.madpracticalsean;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,8 +10,6 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
-
-import sg.edu.np.madpracticalsean.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,4 +28,15 @@ public class MainActivity extends AppCompatActivity {
             followBtn.setText("Follow");
             newUser.followed = true;
         }
+
+        followBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (newUser.followed == true){
+                    Toast.makeText(getApplicationContext(), "Unfollowed", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Followed", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }}
